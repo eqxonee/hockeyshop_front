@@ -16,7 +16,7 @@ const CategoriesList = ({categories}) => {
                                 hoverable={false}>
                                 <Meta
                                     title={category.name}
-                                    description={<NavLink to={"/category/" + category.id}>Подробнее</NavLink>}/>
+                                    description={<NavLink to={"/shop/category/" + category.id}>Подробнее</NavLink>}/>
                             </Card>
                     )
                 })

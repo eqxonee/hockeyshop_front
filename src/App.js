@@ -4,18 +4,20 @@ import Footer from "./components/footer/Footer";
 import {Route, Routes} from "react-router-dom";
 import Categories from "./components/categories/Categories";
 import ProductsInCategories from "./components/products_in_category/ProductsInCategories";
+import Auth from "./components/auth/Auth";
+import AuthLayer from "./components/auth/AuthLayer";
 
 const App = () => {
   return (
       <div>
 
           <Header/>
-
           <Routes>
-
-              <Route path="/" element={<Categories/>}/>
-              <Route path="/category/:categoryId" element={<ProductsInCategories/>}/>
-
+              <Route path="/" element={<Auth/>}/>
+              <Route path="/shop" element={<AuthLayer/>}>
+                  <Route path="categories" element={<Categories/>}/>
+                  <Route path="category/:categoryId" element={<ProductsInCategories/>}/>
+              </Route>
           </Routes>
           <Footer/>
       </div>
