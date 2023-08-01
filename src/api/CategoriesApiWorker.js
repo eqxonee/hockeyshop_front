@@ -10,8 +10,12 @@ class CategoriesApiWorker {
         });
     }
 
-    async getAll() {
-        return await this.#axios.get("/get-all");
+    async getAll(token) {
+        return await this.#axios.get("/get-all", {
+            headers: {
+                "Authorization": "Bearer " + token
+            }
+        });
     }
 }
 

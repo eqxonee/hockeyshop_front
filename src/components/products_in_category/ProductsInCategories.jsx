@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 import ProductsApiWorker from "../../api/ProductsApiWorker";
 import {Alert} from "antd";
 import ProductsInCategoriesList from "./ProductsInCategoriesList";
+import LocalStorageWorker from "../store/LocalStorageWorker";
 
 const ProductsInCategories = () => {
 
@@ -13,8 +14,11 @@ const ProductsInCategories = () => {
     let productsApiWorker = new ProductsApiWorker();
     let [hasApiError,setHasApiError] = useState(false);
 
+    let localStorageWorker = new LocalStorageWorker();
+    let token = localStorageWorker.get("token");
+
     useEffect(() =>{
-        productsApiWorker.getByCategoryId(categoryId).then(
+        productsApiWorker.getByCategoryId(categoryId,token).then(
             response => {
                 setProducts(response.data);
             }
