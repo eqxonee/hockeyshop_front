@@ -30,7 +30,7 @@ const ProductsInCategories = () => {
     })
     return (
         <div>
-            <h1>Тип продукта</h1>
+            <h1>Товары</h1>
             {
                 hasApiError
                     ? <Alert message="Ошибка запроса" type="error"/>

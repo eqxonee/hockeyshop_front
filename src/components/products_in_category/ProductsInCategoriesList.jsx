@@ -40,12 +40,20 @@ const ProductsInCategoriesList = ({products}) => {
                 products.map(product => {
                     return (
                         <Card
-                            style={{width: "140px"}}
+                            style={{width: "250px"}}
                             cover={<Image alt="purchase" src={product.picturePath}/>}
                             hoverable={false}>
                             <Meta
                                 title={product.name}
-                                description={product.description}/>
+                                description={product.description}
+                            />
+                            <li>Цена: {product.price}</li>
+                            <li>Жесткость: {product.rigidity}</li>
+                            <li>Загиб пера: {product.bend}</li>
+                            <li>Хват: {product.grip}</li>
+                            <li>Страна изготовитель: {product.countryName}</li>
+
+
                             <Button type="primary" style={{marginTop: "10px"}}
                                    onClick={()=>addProductToCart(product.id)} ><ShoppingCartOutlined/></Button>
                         </Card>
