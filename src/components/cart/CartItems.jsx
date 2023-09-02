@@ -19,7 +19,7 @@ const CartItems = ({cartItems}) => {
 
         ordersApiWorker.makeOrder(userParams, token).then(
             response => {
-                alert("Success Order");
+                alert("Заказ успешно осуществлен");
                 window.location.reload();
             }
         ).catch(

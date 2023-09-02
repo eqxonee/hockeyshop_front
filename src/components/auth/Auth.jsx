@@ -23,7 +23,7 @@ const Auth = () => {
             };
             authApiWorker.checkPhoneNumber(checkPhone).then(
                 response => {
-                    alert("success " + response.data);
+                    alert("Введите код " + response.data);
                 }
             ).catch(
                 error => {

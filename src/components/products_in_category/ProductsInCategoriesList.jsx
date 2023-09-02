@@ -24,7 +24,7 @@ const ProductsInCategoriesList = ({products}) => {
 
         cartsApiWorker.addNew(insertedItem, token).then(
             response => {
-                alert("success added");
+                alert("Товар успешно добавлен в корзину");
             }
         ).catch(
             error => {

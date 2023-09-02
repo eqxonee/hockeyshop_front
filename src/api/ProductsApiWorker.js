@@ -17,6 +17,19 @@ class ProductsApiWorker {
         });
 
     }
+
+    async getByFilter(name, grip,bend,token) {
+        return await this.#axios.get(`/get-all-filter?limit=${name}&limit=${grip}limit=${bend}`,{
+            headers: {
+                "Authorization": "Bearer " + token
+            }
+        });
+
+    }
+
+    async getProducts(){
+        return await this.#axios.get("/get-all");
+    }
 }
 
 export default ProductsApiWorker
