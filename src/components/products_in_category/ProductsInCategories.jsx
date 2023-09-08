@@ -2,9 +2,10 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import ProductsApiWorker from "../../api/ProductsApiWorker";
-import {Alert} from "antd";
+import {Alert, Button} from "antd";
 import ProductsInCategoriesList from "./ProductsInCategoriesList";
 import LocalStorageWorker from "../store/LocalStorageWorker";
+import ProductsFilter from "../filter/ProductsFilter";
 
 const ProductsInCategories = () => {
 

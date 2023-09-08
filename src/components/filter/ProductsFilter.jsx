@@ -5,9 +5,10 @@ import {Button, Input, Modal, Space} from "antd";
 //import Meta from "antd/es/card/Meta";
 //import {ShoppingCartOutlined} from "@ant-design/icons";
 
-const ProductsFilter = () => {
+const ProductsFilter = ({loadProducts}) => {
 
     let localStorageWorker = new LocalStorageWorker();
+
 
     let token = localStorageWorker.get("token");
 
@@ -22,25 +23,12 @@ const ProductsFilter = () => {
 
     });
 
-    const loadProducts = () => {
-        productsApiWorker.getProducts().then(
-            response => {
-                setProducts(response.data)
-            }
-        ).catch(
-            error => {
-                alert("null");
-            }
-        )
-    }
-
-
-
     const filterProducts = () => {
 
         productsApiWorker.getByFilter(products.name,products.grip,products.bend, token).then(
             response => {
                 loadProducts();
+                alert("kk")
             }
         ).catch(
             error => {
@@ -70,12 +58,12 @@ const ProductsFilter = () => {
                     </div>
                     <div style={{marginTop: "5px" }}>
                         <Input type="number" value={products.grip}
-                               onChange={event => setProducts({...products, serialNumber: event.target.value})}
+                               onChange={event => setProducts({...products, grip: event.target.value})}
                                placeholder={"grip"}/>
                     </div>
                     <div style={{marginTop: "5px" }}>
                         <Input type="text" value={products.bend}
-                               onChange={event => setProducts({...products, productName: event.target.value})}
+                               onChange={event => setProducts({...products, bend: event.target.value})}
                                placeholder={"bend"}/>
                     </div>
                 </div>

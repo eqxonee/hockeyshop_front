@@ -19,7 +19,7 @@ class ProductsApiWorker {
     }
 
     async getByFilter(name, grip,bend,token) {
-        return await this.#axios.get(`/get-all-filter?limit=${name}&limit=${grip}limit=${bend}`,{
+        return await this.#axios.get(`/get-all-filter?name=${name}&grip=${grip}bend=${bend}`,{
             headers: {
                 "Authorization": "Bearer " + token
             }
