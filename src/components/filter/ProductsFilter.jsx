@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
 import LocalStorageWorker from "../store/LocalStorageWorker";
 import ProductsApiWorker from "../../api/ProductsApiWorker";
-import {Button, Input, Modal, Space} from "antd";
+import {Button, Card, Col, Image, Input, Modal, Space} from "antd";
+import Meta from "antd/es/card/Meta";
+import {ShoppingCartOutlined} from "@ant-design/icons";
+//import ProductsInCategoriesList from "../products_in_category/ProductsInCategoriesList";
 //import Meta from "antd/es/card/Meta";
 //import {ShoppingCartOutlined} from "@ant-design/icons";
 
@@ -27,7 +30,8 @@ const ProductsFilter = ({loadProducts}) => {
 
         productsApiWorker.getByFilter(products.name,products.grip,products.bend, token).then(
             response => {
-                loadProducts();
+                // eslint-disable-next-line no-unused-expressions
+                loadProducts()
                 alert("kk")
             }
         ).catch(
@@ -52,12 +56,12 @@ const ProductsFilter = ({loadProducts}) => {
                    cancelText="Отмена">
                 <div>
                     <div style={{marginTop: "5px" }}>
-                        <Input type="number" value={products.name}
+                        <Input type="text" value={products.name}
                                onChange={event => setProducts({...products, name: event.target.value})}
                                placeholder={"Название"}/>
                     </div>
                     <div style={{marginTop: "5px" }}>
-                        <Input type="number" value={products.grip}
+                        <Input type="text" value={products.grip}
                                onChange={event => setProducts({...products, grip: event.target.value})}
                                placeholder={"grip"}/>
                     </div>
@@ -69,6 +73,7 @@ const ProductsFilter = ({loadProducts}) => {
                 </div>
             </Modal>
         </Space>
+
     );
 };
 

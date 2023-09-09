@@ -18,13 +18,27 @@ class ProductsApiWorker {
 
     }
 
-    async getByFilter(name, grip,bend,token) {
-        return await this.#axios.get(`/get-all-filter?name=${name}&grip=${grip}bend=${bend}`,{
+    async getByFilter(name,grip,bend,token) {
+        return await this.#axios.get(`/get-all-filter?name=${name}&grip=${grip}bend=${bend}`, {
             headers: {
                 "Authorization": "Bearer " + token
             }
         });
 
+        //     async getByFilter(name, grip,bend,token) {
+        //         let response =  await this.#axios.get("/get-all-filter",{},{
+        //             params: {
+        //                 name: name,
+        //                 stick_grip: grip,
+        //                 stick_bend: bend
+        //             },
+        //             headers: {
+        //                 "Authorization": "Bearer " + token
+        //             }
+        //         });
+        //         return response;
+        //
+        // }
     }
 
     async getProducts(){

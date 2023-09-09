@@ -6,6 +6,8 @@ import {NavLink} from "react-router-dom";
 import LocalStorageWorker from "../store/LocalStorageWorker";
 import ProductsFilter from "../filter/ProductsFilter";
 import ProductsApiWorker from "../../api/ProductsApiWorker";
+import ProductsInCategories from "../products_in_category/ProductsInCategories";
+import ProductsInCategoriesList from "../products_in_category/ProductsInCategoriesList";
 
 
 const Categories = () => {
