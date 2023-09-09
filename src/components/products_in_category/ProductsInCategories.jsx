@@ -29,6 +29,7 @@ const ProductsInCategories = () => {
             }
         )
     })
+
     return (
         <div>
             <h1>Товары</h1>

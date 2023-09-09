@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState, Component} from 'react';
+//import React,  from 'react';
 import LocalStorageWorker from "../store/LocalStorageWorker";
 import ProductsApiWorker from "../../api/ProductsApiWorker";
 import {Button, Card, Col, Image, Input, Modal, Space} from "antd";
 import Meta from "antd/es/card/Meta";
 import {ShoppingCartOutlined} from "@ant-design/icons";
+import ProductsInCategoriesList from "../products_in_category/ProductsInCategoriesList";
 //import ProductsInCategoriesList from "../products_in_category/ProductsInCategoriesList";
 //import Meta from "antd/es/card/Meta";
 //import {ShoppingCartOutlined} from "@ant-design/icons";
@@ -26,12 +28,16 @@ const ProductsFilter = ({loadProducts}) => {
 
     });
 
+    // useEffect(()=>{
+    //     loadProducts()
+    // },);
+
     const filterProducts = () => {
 
         productsApiWorker.getByFilter(products.name,products.grip,products.bend, token).then(
             response => {
                 // eslint-disable-next-line no-unused-expressions
-                loadProducts()
+            loadProducts()
                 alert("kk")
             }
         ).catch(

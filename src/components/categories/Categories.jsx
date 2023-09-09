@@ -45,6 +45,10 @@ const Categories = () => {
         )
     }
 
+    useEffect(()=>{
+        loadProducts()
+    },);
+
     return (
         <div>
             <NavLink to="/shop/cart">В корзину</NavLink><br/>
